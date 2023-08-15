@@ -1,0 +1,23 @@
+<div class="body">
+  <div class="container">
+    <h2>Parking Spots</h2>
+    <div class="info">
+      <p>Total Spots: <span id="totalSpots">{{ totalSpots }}</span></p>
+      <p>Reserved Spots: <span id="reservedSpots">{{ reservedSpots }}</span></p>
+      <p>Regular Spots: <span id="regularSpots">{{ regularSpots }}</span></p>
+    </div>
+
+    <div class="update-form">
+      <h3>Update Parking Spots</h3>
+      <form (submit)="updateParkingSpotDetails()">
+        <label for="totalSpots">Total Spots:</label><br>
+        <input type="number" id="totalSpots" name="totalSpots" [(ngModel)]="totalSpots"><br>
+        
+        <label for="reservedSpots">Reserved Spots:</label><br>
+        <input type="number" id="reservedSpots" name="reservedSpots" [(ngModel)]="reservedSpots"><br>
+        
+        <button type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+</div>

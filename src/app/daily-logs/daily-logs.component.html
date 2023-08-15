@@ -1,0 +1,71 @@
+<h2 class="section-title">Daily Logs</h2>
+<!-- Create Log Form -->
+<div class="card form-container">
+  <h3>Create Log</h3>
+  <form [formGroup]="logForm" (ngSubmit)="createLog()">
+    <label for="logCode">Code:</label>
+    <input type="text" id="logCode" formControlName="code" required>
+
+    <label for="logSubscriptionId">Subscription Id:</label>
+    <input type="number" id="logSubscriptionId" formControlName="subscriptionId" required>
+
+    <label for="logCheckInTime">Check-in Time:</label>
+    <input type="datetime-local" id="logCheckInTime" formControlName="checkInTime" required>
+
+    <label for="logCheckOutTime">Check-out Time:</label>
+    <input type="datetime-local" id="logCheckOutTime" formControlName="checkOutTime" required>
+
+    <label for="logPrice">Price:</label>
+    <input type="number" id="logPrice" formControlName="price" required>
+
+    <button type="submit" class="btn-create">Create Log</button>
+  </form>
+</div>
+<!-- View Logs by Date -->
+<div class="card date-view-container">
+  <h3>View Logs by Date</h3>
+  <input type="date" [(ngModel)]="selectedDate" (change)="viewLogsByDate()">
+  <ul class="log-list">
+    <li *ngFor="let log of logsByDate" class="log-item">
+      <h4>Log Id : {{ log.id }}</h4>
+      <p>Code: {{ log.code }}</p>
+      <p>Subscription Id: {{ log.subscriptionId }}</p>
+      <p>Check-in Time: {{ log.checkInTime }}</p>
+      <p>Check-out Time: {{ log.checkOutTime }}</p>
+      <p>Price: {{ log.price | currency }}</p>
+      <button (click)="viewLogDetails(log)" class="btn-details">View Details</button>
+      <button (click)="deleteLog(log.id)" class="btn-delete">Delete</button>
+    </li>
+  </ul>
+  <button (click)="closeLogsByDate()" class="btn-close">Close</button>
+</div>
+
+<!-- Search Logs -->
+<div class="card search-container">
+  <h3>Search Logs By Code</h3>
+  <input type="text" [(ngModel)]="searchQuery" (input)="searchLogs()" placeholder="Search By Code Subscription ">
+  <ul class="log-list">
+    <li *ngFor="let log of searchResults" class="log-item">
+      <h4>Log Id :  {{ log.id }}</h4>
+      <p>Code: {{ log.code }}</p>
+      <p>Subscription Id: {{ log.subscriptionId }}</p>
+      <p>Check-in Time: {{ log.checkInTime }}</p>
+      <p>Check-out Time: {{ log.checkOutTime }}</p>
+      <p>Price: {{ log.price  }}</p>
+      <button (click)="viewLogDetails(log)" class="btn-details">View Details</button>
+      <button (click)="deleteLog(log.id)" class="btn-delete">Delete</button>
+    </li>
+  </ul>
+</div>
+<!-- Log Details Modal -->
+<div *ngIf="selectedLog" class="card modal-container">
+  <h3>Log Details</h3>
+  <p>Code: {{ selectedLog.code }}</p>
+  <p>Subscription Id: {{ selectedLog.subscriptionId }}</p>
+  <p>Check-in Time: {{ selectedLog.checkInTime }}</p>
+  <p>Check-out Time: {{ selectedLog.checkOutTime }}</p>
+  <p>Price: {{ selectedLog.price | currency }}</p>
+  <button (click)="closeLogDetails()" class="btn-close">Close</button>
+</div> 
+
+

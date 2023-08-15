@@ -1,0 +1,61 @@
+<div class="subscriptions-container">
+  <h2>Subscriptions</h2>
+  <!-- Search Subscription -->
+  <div class="search-container">
+    <input class="search" type="text" [(ngModel)]="searchQuery" placeholder="Search" (input)="filterSubscriptions()">
+  </div>
+
+  <!-- Create Subscription Form -->
+  <div class="subscription-form">
+    <form [formGroup]="subscriptionForm">
+      <label for="code"> Code: </label>
+      <input type="text" id="code" formControlName="code">
+
+      <label for="subscriberId"> Subscriber Id: </label>
+      <input type="number" id="subscriberId" formControlName="subscriberId">
+
+      <label for="price"> Price: </label>
+      <input type="number" id="price" formControlName="price">
+
+      <label for="discountValue"> Discount Value: </label>
+      <input type="number" id="discountValue" formControlName="discountValue">
+
+      <label for="startDate"> Start Date: </label>
+      <input type="date" id="startDate" formControlName="startDate">
+
+      <label for="endDate"> End Date: </label>
+      <input type="date" id="endDate" formControlName="endDate"><br>
+
+      <br>
+      <div class="button">
+        <button type="button" (click)="createSubscription()">Create</button>
+        <button type="button" (click)="updateSubscription()">Update</button>
+        <button type="button" (click)="clearForm()">Clear</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- List Subscriptions -->
+  <div class="subscription-list">
+    <div class="subscriptions-grid">
+      <div *ngFor="let subscription of subscriptions" class="subscription-item">
+        <div class="subscription-card">
+          <h3>Code : {{ subscription.code }}</h3>
+          <p>Subscriber Name: {{ getSubscriberName(subscription.subscriberId) }}</p> <!-- Get name from subscriber -->
+          <p>Subscriber Id: {{ subscription.subscriberId }}</p>
+          <p>Price: {{ subscription.price | currency }}</p>
+          <p>Discount Value: {{ subscription.discountValue }}</p>
+          <p>Start Date: {{ subscription.startDate }}</p>
+          <p>End Date: {{ subscription.endDate }}</p>
+          <div class="subscription-buttons">
+            <button (click)="selectSubscription(subscription)">Edit</button>
+            <button *ngIf="!subscription.isDeleted" (click)="deleteSubscription(subscription.id)">Delete</button>
+            <!-- <button *ngIf="subscription.isDeleted" (click)="restoreSubscription(subscription.id)">Restore to
+              Delete</button> -->
+            <button (click)="viewSubscriptionDetails(subscription)">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

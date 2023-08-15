@@ -1,0 +1,155 @@
+/* subscribers.component.css */
+.subscribers-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-container {
+    text-align: center;
+    display: grid
+  }
+  
+  .subscriber-form {
+    /*display: grid;*/
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    align-items: center;
+  }
+  
+  .subscriber-form label,
+  .subscriber-form input {
+    margin-bottom: 10px;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .subscriber-list {
+    margin-top: 30px;
+
+  }
+  
+  .subscriber-item {
+    list-style: none;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .subscriber-buttons button {
+    margin-right: 10px;
+  }
+  
+  .subscriber-buttons button:last-child {
+    margin-right: 0;
+  }
+
+  /*ketu nisin kartat */
+  /* subscribers.component.css */
+.subscribers-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .subscriber-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start; /* Vendos formën në pjesën e sipërme të subscribers-container */
+  }
+  
+  .form-inputs {
+    width: calc(66.66% - 20px); /* Shfaq formën 2/3 e subscribers-container */
+  }
+  
+  .form-inputs label,
+  .form-inputs input {
+    margin-bottom: 10px;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .subscriber-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .subscribers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .subscriber-item {
+    width: calc(33.33% - 20px); /* Shfaq 3 karta në një resht për ekran të madh */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  /*.subscriber-item:nth-child(3n + 2) {
+    margin: 0 auto; /* Vendos kartën e dytë në mes të reshtit 
+  }*/
+  
+  /* .subscriber-item:nth-child(3n + 3) {
+    margin-left: auto; /* Vendos kartën e tretë në të djathtë të reshtit 
+  } */
+  
+  /* Stilizimi për ekran pak më të vogël */
+  @media (max-width: 1024px) {
+    .subscriber-item {
+      width: calc(50% - 20px); /* Shfaq 2 karta në një resht për ekran të mesëm */
+    }
+    
+    .subscriber-item:nth-child(2n + 1) {
+      margin-left: 0;
+    }
+    
+    .subscriber-item:nth-child(2n + 2) {
+      margin: 0 auto; /* Vendos kartën e dytë në mes të reshtit */
+    }
+  }
+  
+  /* Stilizimi për ekran të vogël */
+  @media (max-width: 768px) {
+    .subscriber-form {
+      width: 100%; /* Shfaq formën në të gjithë subscribers-container */
+    }
+    
+    .form-inputs {
+      width: 100%; /* Shfaq formën në të gjithë subscribers-container */
+    }
+    
+    .subscriber-item {
+      width: calc(100% - 20px); /* Shfaq 1 kartë në një resht për ekran të vogël */
+    }
+    
+    .subscriber-item:nth-child(1n + 1) {
+      margin-left: 0;
+    }
+  }
+  
+ 
+
+ 

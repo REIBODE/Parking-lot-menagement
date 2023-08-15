@@ -1,0 +1,60 @@
+<h2>Subscribers</h2>
+<div class="subscribers-container subscriber-item">  
+  <div class="search-container">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Search" (input)="filterSubscribers()">
+  </div><br>
+    <div class="subscriber-form ">
+      <form [formGroup]="subscriberForm" class="subscriber-form" >
+        <div class="form-inputs">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" formControlName="firstName" >
+      
+        <br><label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" formControlName="lastName" >
+      
+        <br><label for="idCardNumber">ID Card Number:</label>
+        <input type="text" id="idCardNumber" formControlName="idCardNumber" >
+      
+        <br><label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" >
+      
+        <br><label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" formControlName="phoneNumber" >
+      
+        <br><label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" formControlName="birthday" >
+      
+        <br><label for="plateNumber">Plate Number:</label>
+        <input type="text" id="plateNumber" formControlName="plateNumber" >  
+      </div> 
+    </form>
+
+  </div>
+  <div class="form-buttons subscriber-list">
+    <button type="button" (click)="createSubscriber()">Create</button>
+    <button type="button" (click)="updateSubscriber()">Update</button>
+    <button type="button" (click)="clearForm()">Clear</button>
+  </div>
+</div>
+ 
+<!-- View Subscriber  -->
+<div class="subscriber-list">
+  <ul class="subscribers-grid">
+    <li *ngFor="let subscriber of subscribers" class="subscriber-item">
+      <h3>{{ subscriber.firstName }} {{ subscriber.lastName }}</h3>
+      <p>ID Card Number: {{ subscriber.idCardNumber }}</p>
+      <p>Email: {{ subscriber.email }}</p>
+      <p>Phone Number: {{ subscriber.phoneNumber }}</p>
+      <p>Birthday: {{ subscriber.birthday }}</p>
+      <p>Plate Number: {{ subscriber.plateNumber }}</p>
+      <div class="subscriber-buttons">
+        <button (click)="selectSubscriber(subscriber)">Edit</button>
+        <button *ngIf="!subscriber.isDeleted" (click)="deleteSubscriber(subscriber.id)">Delete</button>
+        <!-- <button *ngIf="subscriber.isDeleted" (click)="deleteSubscriber(subscriber.id)">Go to Delete</button> -->
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+

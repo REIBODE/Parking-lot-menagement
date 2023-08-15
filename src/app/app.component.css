@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Div container */
+  .container {
+    /*max-width: flex;*/
+    margin: 0 auto;
+    padding: 20px;
+    background-color: papayawhip;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header & element of menu */
+  header {
+    background-color: peachpuff;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav li:last-child {
+    margin-right: 0;
+  }
+  
+  nav a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+    color: whitesmoke;
+  }
+  
+  /* Stilizimi i titullit */
+  h1 {
+    margin-top: 20px;
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  router-outlet {
+    margin-top: 20px;
+  }
+
+  
+/* Stilizimi i paragrafave */
+p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}

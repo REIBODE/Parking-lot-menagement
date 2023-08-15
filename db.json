@@ -1,0 +1,182 @@
+{
+  "parking-spots": {
+    "totalSpots": 200,
+    "reservedSpots": 120
+  },
+  "pricing-plans": [
+    {
+      "id": 1,
+      "type": "Weekday",
+      "hourlyPricing": 3,
+      "dailyPricing": 8,
+      "minimumHours": 3
+    },
+    {
+      "id": 2,
+      "type": "Weekend",
+      "hourlyPricing": 2,
+      "dailyPricing": 10,
+      "minimumHours": 3
+    }
+  ],
+  "subscribers": [
+    {
+      "id": 1,
+      "firstName": "Johnins",
+      "lastName": "Dows",
+      "idCardNumber": "ABC123",
+      "email": "john.doe@example.com",
+      "phoneNumber": "+1 123-456-7890",
+      "birthday": "1990-05-15",
+      "plateNumber": "XYZ-12345",
+      "isDeleted": null
+    },
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "idCardNumber": " ABC123",
+      "email": "jane.smith@example.com",
+      "phoneNumber": "+1 987-654-3210",
+      "birthday": "1985-09-20",
+      "plateNumber": "ABC-987",
+      "isDeleted": false
+    },
+    {
+      "id": 3,
+      "firstName": "Michael",
+      "lastName": "Johnson",
+      "idCardNumber": "GHI789",
+      "email": "michael.johnson@example.com",
+      "phoneNumber": "+1 555-123-4567",
+      "birthday": "1995-02-10",
+      "plateNumber": "QWE-45678",
+      "isDeleted": false
+    },
+    {
+      "id": 4,
+      "firstName": "Emily",
+      "lastName": "Johnson",
+      "idCardNumber": "JKL012",
+      "email": "emily.johnson@example.com",
+      "phoneNumber": "+1 444-555-6666",
+      "birthday": "1998-11-03",
+      "plateNumber": "MNO-54321",
+      "isDeleted": false
+    },
+    {
+      "id": 5,
+      "firstName": "Robert",
+      "lastName": "Williams",
+      "idCardNumber": "PQR345",
+      "email": "robert.williams@example.com",
+      "phoneNumber": "+1 222-333-4444",
+      "birthday": "1982-07-18",
+      "plateNumber": "STU-98765",
+      "isDeleted": false
+    },
+    {
+      "id": 6,
+      "firstName": "Sarah",
+      "lastName": "Davis",
+      "idCardNumber": "VWX678",
+      "email": "sarah.davis@example.com",
+      "phoneNumber": "+1 777-888-9999",
+      "birthday": "1993-04-22",
+      "plateNumber": "YZA-24680",
+      "isDeleted": false
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": 1,
+      "code": "CODE-1",
+      "subscriberId": 2,
+      "price": 100,
+      "discountValue": 20,
+      "startDate": "2023-09-01",
+      "endDate": "2023-09-30",
+      "isDeleted": false
+    },
+    {
+      "id": 2,
+      "code": "CODE-2",
+      "subscriberId": 2,
+      "price": 80,
+      "discountValue": 10,
+      "startDate": "2023-08-15",
+      "endDate": "2023-09-01",
+      "isDeleted": false
+    },
+    {
+      "id": 3,
+      "code": "CODE-3",
+      "subscriberId": 3,
+      "price": 10,
+      "discountValue": 5,
+      "startDate": "2022-01-01",
+      "endDate": "2022-01-03",
+      "isDeleted": false
+    },
+    {
+      "id": 4,
+      "code": "CODE-4",
+      "subscriberId": 4,
+      "price": 200,
+      "discountValue": 20,
+      "startDate": "2022-11-15",
+      "endDate": "2023-01-01",
+      "isDeleted": false
+    }
+  ],
+  "daily-logs": [
+    {
+      "id": 1,
+      "code": "CODE-1",
+      "subscriptionId": 1,
+      "checkInTime": "2023-08-01T08:00:00",
+      "checkOutTime": "2023-08-01T16:30:00",
+      "price": 10
+    },
+    {
+      "id": 2,
+      "code": "CODE-2",
+      "subscriptionId": 2,
+      "checkInTime": "2023-08-02T09:15:00",
+      "checkOutTime": "2023-08-02T12:45:00",
+      "price": 7.5
+    },
+    {
+      "id": 3,
+      "code": "CODE-3",
+      "subscriptionId": 3,
+      "checkInTime": "2023-08-03T10:30:00",
+      "checkOutTime": "2023-08-03T14:00:00",
+      "price": 5.75
+    },
+    {
+      "code": "CODE-4",
+      "subscriptionId": 4,
+      "checkInTime": "2023-08-01T08:00",
+      "checkOutTime": "2023-08-01T16:30",
+      "price": 10,
+      "id": 4
+    },
+    {
+      "code": "CODE-4",
+      "subscriptionId": 4,
+      "checkInTime": "2024-01-02T11:00",
+      "checkOutTime": "2023-01-02T00:00",
+      "price": 2,
+      "id": 5
+    },
+    {
+      "code": "Code ",
+      "subscriptionId": 1,
+      "checkInTime": "2023-01-01T01:00",
+      "checkOutTime": "2023-01-01T02:00",
+      "price": 19,
+      "id": 6
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://www.mokosmart.com/wp-content/uploads/2022/03/smart-parking.webp");
+    height: 600px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  h2 {
+    color: #007bff;
+  }
+  
+  .info {
+    margin-bottom: 20px;
+  }
+  
+  .info p {
+    margin: 5px 0;
+  }
+  
+  .info p span {
+    font-weight: bold;
+  }
+  
+  .update-form {
+    padding: 10px;
+    border-top: 1px solid #007bff;
+  }
+  
+  h3 {
+    color: #007bff;
+  }
+  
+  form {
+    margin-top: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,48 @@
+<h2 class="pricing-header">Pricing Plans</h2>
+<div *ngIf="pricingPlans" class="pricing-plans-container">
+  <div class="flex-container">
+    <div class="flex-item">
+      <ul class="pricing-plans-list">
+        <li *ngFor="let plan of pricingPlans" class="pricing-plan-item">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="plan-type">{{ plan.type }}</h3>
+              <p class="plan-price">Hourly Pricing: {{ plan.hourlyPricing | currency }}</p>
+              <p class="plan-price">Daily Pricing: {{ plan.dailyPricing | currency }}</p>
+              <p class="plan-min-hours">Minimum Hours: {{ plan.minimumHours }}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="flex-item">
+      <div *ngIf="selectedPlan" class="update-pricing-form">
+        <div class="card-body">
+          <h3 class="update-header">Update Pricing Plans</h3>
+          <form (submit)="updatePricingPlanDetails()" class="pricing-form">
+            <label for="type" class="form-label">Type (Weekday | Weekend):</label>
+            <select id="type" name="type" [(ngModel)]="selectedPlanType" (ngModelChange)="updateSelectedPlan()"
+              class="form-select">
+              <option value="Weekday">Weekday</option>
+              <option value="Weekend">Weekend</option>
+            </select>
+
+            <label for="hourlyPricing" class="form-label">Hourly Pricing ($) :</label>
+            <input type="number" id="hourlyPricing" name="hourlyPricing" [(ngModel)]="selectedPlan.hourlyPricing"
+              class="form-input">
+
+            <label for="dailyPricing" class="form-label">Daily Pricing ($) :</label>
+            <input type="number" id="dailyPricing" name="dailyPricing" [(ngModel)]="selectedPlan.dailyPricing"
+              class="form-input">
+
+            <label for="minimumHours" class="form-label">Minimum Hours (hh) :</label>
+            <input type="number" id="minimumHours" name="minimumHours" [(ngModel)]="selectedPlan.minimumHours"
+              class="form-input">
+
+            <button type="submit" class="form-button">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
